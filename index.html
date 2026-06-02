@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portofolio - Nasriani, S.Pd.</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #3d7ea6;
+            --accent: #f4a261;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text-light: #6c757d;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 58, 95, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+/* Hero Section */
+        .hero {
+            min-height: 100vh;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(30,58,95,0.3) 0%, rgba(30,58,95,0.7) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            z-index: 1;
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 0 5%;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Profil Section */
+        #profil {
+            background: white;
+        }
+        
+        .profil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .biodata-list {
+            list-style: none;
+        }
+        
+        .biodata-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .biodata-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .biodata-list .label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .biodata-list .value {
+            color: var(--dark);
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        .profil-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .profil-card.biodata {
+            background: #fef3e2;
+        }
+        
+        .profil-card.daerah {
+            background: #e8f5e9;
+        }
+        
+        .profil-card.inspirasi {
+            background: #e3f2fd;
+        }
+        
+        .profil-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .profil-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 6rem;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.15;
+            font-family: Georgia, serif;
+        }
+        
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-author {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+/* Artefak Pembelajaran */
+        #artefak {
+            background: var(--light);
+        }
+
+        .artefak-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .artefak-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .artefak-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .artefak-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .artefak-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .artefak-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .artefak-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .artefak-card:hover .artefak-btn {
+            background: var(--accent);
+        }
+        
+        /* Penilaian Section */
+        #penilaian {
+            background: white;
+        }
+        
+        .penilaian-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .penilaian-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .penilaian-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .penilaian-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .rating-item:last-child {
+            border-bottom: none;
+        }
+        
+        .rating-label {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        
+        .rating-stars {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .penilaian-text {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Model Guru Section */
+        #model {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        #model .section-title {
+            color: white;
+        }
+        
+        #model .section-title::after {
+            background: var(--accent);
+        }
+        
+        #model .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .model-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .model-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .model-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .model-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .model-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .model-card ul {
+            list-style: none;
+            opacity: 0.9;
+        }
+        
+        .model-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .model-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .model-quote {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-style: italic;
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .profil-grid, .penilaian-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-logo">PPG Portfolio</a>
+        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#artefak">Artefak Pembelajaran</a></li>
+            <li><a href="#penilaian">Penilaian</a></li>
+            <li><a href="#model">Model Guru</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+<section class="hero">
+        <img src="hero.gif" alt="Hero Background" class="hero-gif">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Nasriani, S.Pd.</h1>
+            <p class="hero-subtitle">PPG Calon Guru 2026 — Universitas Negeri Makassar</p>
+            <div class="hero-location">📍 SMKN 6 Makassar</div>
+        </div>
+    </section>
+
+    <section id="profil">
+        <h2 class="section-title" data-aos="fade-up">Profil Mahasiswa</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Mengenal lebih dekat dengan asal daerah dan visi kependidikan</p>
+        
+        <div class="profil-grid">
+	    <div class="profil-card biodata" data-aos="fade-up" data-aos-delay="400">
+                <h3>🧾 Biodata</h3>
+                <ul class="biodata-list">
+                    <li><span class="label">Nama</span><span class="value">Nasriani, S.Pd.</span></li>
+                    <li><span class="label">NIM</span><span class="value">2590494950035</span></li>
+                    <li><span class="label">Bidang Studi</span><span class="value">Kuliner</span></li>
+                    <li><span class="label">Universitas</span><span class="value">Universitas Negeri Makassar</span></li>
+                    <li><span class="label">Angkatan</span><span class="value">2026</span></li>
+                    <li><span class="label">Sekolah Mitra</span><span class="value">SMKN 6 Makassar</span></li>
+                    <li><span class="label">Dosen Pembimbing</span><span class="value">Dr. Slamet Widodo, S.Pd., M.Kes.</span></li>
+                    <li><span class="label">Guru Pamong</span><span class="value">Mardiana Mandeha, S.Pd.</span></li>
+                </ul>
+            </div>
+
+            <div class="profil-card daerah" data-aos="fade-up" data-aos-delay="400">
+                <h3>🏠 Asal Daerah</h3>
+                <p>Bone adalah rumah bagi filosofi Pangadereng. Karakter masyarakatnya terbentuk dari prinsip Taro Ada Taro Gau, sebuah landasan moral yang menekankan keselarasan antara perkataan dan perbuatan. Bagi masyarakat Bone, integritas adalah segalanya; apa yang diucapkan haruslah dibuktikan dengan tindakan nyata. Prinsip ini melahirkan pribadi-pribadi yang jujur, bertanggung jawab, dan sangat memegang teguh janji.</p>
+                <br>
+                <p>Keunikan daerah ini semakin lengkap dengan kerajinan tangan Songkok Recca, anyaman serat pelepah aren yang menjadi simbol identitas dan martabat. Letak geografis Bone yang membentang di sepanjang pesisir Teluk Bone menjadikannya sebagai salah satu kekuatan maritim dan lumbung perikanan terbesar di Sulawesi Selatan.</p>
+            </div>
+            
+            <div class="profil-card inspirasi" data-aos="fade-up" data-aos-delay="300">
+                <h3>💡 Inspirasi Menjadi Guru</h3>
+                <p>Inspirasi menjadi guru bagi saya muncul karena saya sangat suka mengajar dan berbagi kepada sesama. Berlatar belakang berbagai organisasi telah membentuk saya menjadi pribadi yang aktif di masyarakat dan senang berbagi, terutama dalam hal pengetahuan.</p>
+                <br>
+                <p>Bagi saya, menjadi guru bukan sekadar profesi, melainkan jembatan untuk mengabdikan pengalaman organisasi saya ke dalam ruang kelas demi mencetak generasi yang tidak hanya cerdas secara akademis, tetapi juga peka secara sosial. Selalu ada harapan bagi mereka yang ingin berusaha, selalu ada peluang bagi mereka yang berusaha. Dan selalu ada jalan bagi mereka yang tak lelah berusaha.</p>
+            </div>
+        </div>
+        
+        <div class="quote-box" data-aos="fade-up" data-aos-delay="500" style="margin-top: 2.5rem;">
+            <p class="quote-text">"Jika kamu berhenti di kegagalanmu yang kedua, maka kamu tidak akan tahu bahwa kamu akan berhasil di percobaanmu yang ketiga."</p>
+            <p class="quote-author">— Nasriani, S.Pd.</p>
+        </div>
+    </section>
+
+    <section id="artefak">
+        <h2 class="section-title" data-aos="fade-up">Artefak Pembelajaran</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Dokumentasi siklus pembelajaran selama PPL</p>
+        
+        <div class="artefak-grid">
+            <a href="siklus1.html" class="artefak-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="artefak-icon">📁</div>
+                <h3>Siklus 1</h3>
+                <p>3 Pertemuan - SMKN 6 Makassar</p>
+                <span class="artefak-btn">Lihat Detail →</span>
+            </a>
+            
+            <a href="siklus2.html" class="artefak-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="artefak-icon">📁</div>
+                <h3>Siklus 2</h3>
+                <p>3 Pertemuan - SMKN 6 Makassar</p>
+                <span class="artefak-btn">Lihat Detail →</span>
+            </a>
+            
+            <a href="siklus3.html" class="artefak-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="artefak-icon">📁</div>
+                <h3>Siklus 3</h3>
+                <p>2 Pertemuan - SMKN 6 Makassar</p>
+                <span class="artefak-btn">Lihat Detail →</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="penilaian">
+        <h2 class="section-title" data-aos="fade-up">Penilaian Guru Pamong</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Lampiran 7 & 8 - Instrumen Penilaian</p>
+        
+        <div class="penilaian-grid">
+            <div class="penilaian-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>📋 Lampiran 7: Penyusunan Perangkat Pembelajaran</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-light);">SMKN 6 Makassar - 8 Siklus</p>
+                
+                <div class="rating-item">
+                    <span class="rating-label">Identitas dan Kompetensi</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Pengembangan Materi, Bahan, Sumber dan Media Belajar</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Skenario Kegiatan Pembelajaran</span>
+                    <span class="rating-stars">★★★★☆</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Kesesuaian Penilaian dengan Tujuan</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+
+                
+                <div class="penilaian-text">
+                    "Siswa menunjukkan dedikasi yang tinggi dalam penyusunan perangkat pembelajaran. Rencana pembelajaran disusun dengan baik dan inovatif."
+                </div>
+            </div>
+            
+            <div class="penilaian-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>📋 Lampiran 8: Instrumen Penilaian Praktik Mengajar</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-light);">SMKN 6 Makassar - Mata Pelajaran: Pengolahan Makanan dan Minuman</p>
+                
+                <div class="rating-item">
+                    <span class="rating-label">Kemampuan Membuka Pelajaran</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Melaksanakan Kegiatan Inti Pembelajaran</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Menutup Pembelajaran</span>
+                    <span class="rating-stars">★★★★★</span>
+                </div>
+                <div class="rating-item">
+                    <span class="rating-label">Faktor Penunjang</span>
+                    <span class="rating-stars">★★★★☆</span>
+                </div>
+
+                
+                <div class="penilaian-text">
+                    "Praktik mengajar sangat profesional. Siswa mampu mengelola kelas dengan baik dan melibatkan siswa secara aktif dalam pembelajaran."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="model">
+        <h2 class="section-title" data-aos="fade-up">Model Guru yang Dituju</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Misi, Kompetensi dan Karakter Guru Profesional</p>
+        
+        <div class="model-content">
+            <div class="model-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="model-icon">🎯</div>
+                <h3>Misi</h3>
+                <ul>
+                    <li>Menciptakan ekosistem belajar yang partisipatif</li>
+                    <li>Menerapkan pembelajaran berbasis realita</li>
+                    <li>Menjadi teladan yang baik</li>
+                    <li>Menjadi pembelajar yang adaptif</li>
+                </ul>
+            </div>
+            
+            <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="model-icon">💪</div>
+                <h3>Kompetensi</h3>
+                <ul>
+                    <li>Kompetensi Profesional</li>
+                    <li>Kompetensi Pedagogik</li>
+                    <li>Kompetensi Kepribadian</li>
+                    <li>Kompetensi Sosial</li>
+                </ul>
+            </div>
+            
+            <div class="model-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="model-icon">⭐</div>
+                <h3>Karakter</h3>
+                <ul>
+                    <li>Open Minded (Berfikiran Terbuka)</li>
+                    <li>Kolaborasi (Kerja Sama)</li>
+                    <li>Adaptif (Dapat Beradaptasi)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="model-quote" data-aos="fade-up" data-aos-delay="500">
+            "Model guru yang ingin saya capai adalah Guru Profesional yang Transformatif; yaitu pendidik yang mampu mengombinasikan kompetensi pedagogik dengan pengalaman organisasi saya untuk menciptakan kelas yang demokratis, aktif, dan inspiratif, sehingga siswa tidak hanya cerdas secara kognitif tetapi juga tangguh secara karakter."
+        </div>
+    </section>
+
+    <footer>
+        <p>E-Portofolio | Nasriani, S.Pd. | PPG Calon Guru 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siklus 1 - Artefak Pembelajaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #3d7ea6;
+            --accent: #f4a261;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text-light: #6c757d;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        
+        header a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            padding: 3rem 5%;
+            max-width: 1000px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .pertemuan {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .pertemuan-header {
+            padding: 1.2rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .pertemuan-header:hover {
+            background: var(--secondary);
+        }
+        
+        .pertemuan-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .pertemuan-toggle {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .pertemuan.active .pertemuan-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .pertemuan-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .pertemuan.active .pertemuan-content {
+            max-height: 2000px;
+        }
+        
+        .pertemuan-inner {
+            padding: 1.5rem;
+        }
+        
+        .konten-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .konten-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .konten-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .konten-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-left: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--accent);
+        }
+        
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .doc-item {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .doc-item span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doc-item p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span>📁 Siklus 1</span>
+        <a href="index.html">← Kembali ke Portfolio</a>
+    </header>
+    
+    <div class="container">
+        <h1 data-aos="fade-up">Siklus 1: Pertemuan</h1>
+        <p class="subtitle" data-aos="fade-up" data-aos-delay="100">SMKN 6 Makassar - Pengolahan Makanan dan Minuman</p>
+        
+        <div class="pertemuan" data-aos="fade-up" data-aos-delay="200">
+            <div class="pertemuan-header" onclick="togglePertemuan(this)">
+                <h3>📄 Pertemuan 1</h3>
+                <span class="pertemuan-toggle">▼</span>
+            </div>
+            <div class="pertemuan-content">
+                <div class="pertemuan-inner">
+                    <div class="konten-item">
+                        <h4>📚 Modul Ajar</h4>
+                        <p>Modul Ajar Pertemuan 1 - Teknik Pengolahan Dasar <a href="https://docs.google.com/document/d/1-E3TKBSVWm8lfRHLSEr1wQD9SW-t9l4B/" class="download-btn" target="_blank">👁 Lihat</a></p>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📷 Dokumentasi</h4>
+                        <div class="doc-grid">
+                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                            <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                        </div>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📊 Analisis</h4>
+                        <p>Analisis pembelajaran pertemuan 1 mencakup evaluasi keberhasilan siswa dalam memahami teknik dasar pengolahan makanan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pertemuan" data-aos="fade-up" data-aos-delay="250">
+            <div class="pertemuan-header" onclick="togglePertemuan(this)">
+                <h3>📄 Pertemuan 2</h3>
+                <span class="pertemuan-toggle">▼</span>
+            </div>
+            <div class="pertemuan-content">
+                <div class="pertemuan-inner">
+                    <div class="konten-item">
+                        <h4>📚 Modul Ajar</h4>
+                        <p>Modul Ajar Pertemuan 2 - Teknik Pengolaha Lanjutan........... <a href="#" class="download-btn">👁 Lihat</a> <a href="#" class="download-btn">⬇ Download</a></p>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📷 Dokumentasi</h4>
+                        <div class="doc-grid">
+                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                        </div>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📊 Analisis</h4>
+                        <p>Analisis pembelajaran pertemuan 2 menunjukkan peningkatan kemampuan siswa dalam teknik pengolahan lanjutan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pertemuan" data-aos="fade-up" data-aos-delay="300">
+            <div class="pertemuan-header" onclick="togglePertemuan(this)">
+                <h3>📄 Pertemuan 3</h3>
+                <span class="pertemuan-toggle">▼</span>
+            </div>
+            <div class="pertemuan-content">
+                <div class="pertemuan-inner">
+                    <div class="konten-item">
+                        <h4>📚 Modul Ajar</h4>
+                        <p>Modul Ajar Pertemuan 3 - Evaluasi Keterampilan........... <a href="#" class="download-btn">👁 Lihat</a> <a href="#" class="download-btn">⬇ Download</a></p>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📷 Dokumentasi</h4>
+                        <div class="doc-grid">
+                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                            <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                        </div>
+                    </div>
+                    <div class="konten-item">
+                        <h4>📊 Analisis</h4>
+                        <p>Analisis pembelajaran pertemuan 3 berupa evaluasi akhir untuk menilai keseluruhan keterampilan siswa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true });
+        
+        function togglePertemuan(el) {
+            el.parentElement.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
