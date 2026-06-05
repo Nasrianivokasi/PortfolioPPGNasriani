@@ -578,9 +578,65 @@
                 font-size: 1.6rem;
             }
             
-            .profil-grid, .penilaian-grid {
+            .profil-grid, .penilaian-grid, .galeri-grid {
                 grid-template-columns: 1fr;
             }
+        }
+        
+        /* Galeri Section */
+        #galeri {
+            background: white;
+        }
+        
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .galeri-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .galeri-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .galeri-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .galeri-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(30,58,95,0.9));
+            padding: 2rem 1rem 0.8rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .galeri-caption h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .galeri-caption p {
+            font-size: 0.75rem;
+            opacity: 0.85;
         }
     </style>
 </head>
@@ -593,6 +649,8 @@
             <li><a href="#artefak">Artefak Pembelajaran</a></li>
             <li><a href="#penilaian">Penilaian</a></li>
             <li><a href="#model">Model Guru</a></li>
+            <li><a href="#refleksi">Refleksi</a></li>
+            <li><a href="#galeri">Galeri</a></li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
@@ -699,6 +757,9 @@
                 </div>
 
                 
+                <div style="text-align: right; margin: 1rem 0;">
+                    <a href="#" class="artefak-btn" target="_blank">👁 Lihat Dokumen</a>
+                </div>
                 <div class="penilaian-text">
                     "Siswa menunjukkan dedikasi yang tinggi dalam penyusunan perangkat pembelajaran. Rencana pembelajaran disusun dengan baik dan inovatif."
                 </div>
@@ -726,9 +787,83 @@
                 </div>
 
                 
+                <div style="text-align: right; margin: 1rem 0;">
+                    <a href="#" class="artefak-btn" target="_blank">👁 Lihat Dokumen</a>
+                </div>
                 <div class="penilaian-text">
                     "Praktik mengajar sangat profesional. Siswa mampu mengelola kelas dengan baik dan melibatkan siswa secara aktif dalam pembelajaran."
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="refleksi">
+        <h2 class="section-title" data-aos="fade-up">Refleksi Pembelajaran</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Analisis dan refleksi selama proses PPL di SMKN 6 Makassar</p>
+        
+        <div class="profil-grid">
+            <div class="profil-card biodata" data-aos="fade-up" data-aos-delay="200">
+                <h3>⚠️ Kendala Penyusunan</h3>
+                <p>Keterbatasan bahan ajar dan buku referensi baru menjadi tantangan utama dalam penyusunan perangkat pembelajaran. Untuk mengatasinya, saya memanfaatkan sumber belajar digital dan berkolaborasi dengan guru pamong dalam mengadaptasi materi yang relevan dengan kondisi siswa.</p>
+            </div>
+            
+            <div class="profil-card daerah" data-aos="fade-up" data-aos-delay="300">
+                <h3>📖 Teori Pedagogi</h3>
+                <p>Mengadopsi <strong>Teori Konstruktivisme</strong> dan <strong>Kognitivisme Sosial</strong> yang menekankan pembelajaran berbasis pengalaman langsung dan interaksi sosial. Siswa dibangun pemahamannya melalui praktik nyata dan kolaborasi kelompok, sehingga pembelajaran menjadi lebih bermakna.</p>
+            </div>
+            
+            <div class="profil-card inspirasi" data-aos="fade-up" data-aos-delay="400">
+                <h3>✅ Faktor Keberhasilan</h3>
+                <p>Dukungan penuh dari dosen pembimbing dan guru pamong menjadi faktor utama keberhasilan. Antusiasme dan partisipasi aktif siswa dalam setiap sesi pembelajaran juga berkontribusi besar terhadap tercapainya tujuan pembelajaran yang telah ditetapkan.</p>
+            </div>
+            
+            <div class="profil-card" data-aos="fade-up" data-aos-delay="500" style="background:#fff3e0;">
+                <h3>🔄 Adaptasi Kelas Lain</h3>
+                <p>Perangkat pembelajaran dirancang fleksibel sehingga dapat diadaptasi untuk situasi kelas yang berbeda. Penyesuaian dilakukan pada metode penyampaian, tingkat kesulitan tugas, dan instrumen penilaian sesuai dengan karakteristik dan kebutuhan masing-masing kelas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <h2 class="section-title" data-aos="fade-up">Galeri Dokumentasi</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Momen selama PPL di SMKN 6 Makassar</p>
+        
+        <div class="galeri-grid">
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/galeri/galeri (1).jpg" alt="Dokumentasi 1">
+                <div class="galeri-caption"><h4>Pembukaan PPL</h4><p>Upacara pembukaan kegiatan PPL di SMKN 6 Makassar</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="150">
+                <img src="img/galeri/galeri (2).jpg" alt="Dokumentasi 2">
+                <div class="galeri-caption"><h4>Persiapan Mengajar</h4><p>Menyusun perangkat pembelajaran bersama guru pamong</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/galeri/galeri (3).jpg" alt="Dokumentasi 3">
+                <div class="galeri-caption"><h4>Kegiatan Belajar</h4><p>Proses pembelajaran teori di dalam kelas</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="250">
+                <img src="img/galeri/galeri (4).JPG" alt="Dokumentasi 4">
+                <div class="galeri-caption"><h4>Praktik Kuliner</h4><p>Siswa melakukan praktik pengolahan makanan</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/galeri/galeri (5).jpg" alt="Dokumentasi 5">
+                <div class="galeri-caption"><h4>Bimbingan Dosen</h4><p>Sesi bimbingan dengan dosen pembimbing lapangan</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="350">
+                <img src="img/galeri/galeri (6).jpg" alt="Dokumentasi 6">
+                <div class="galeri-caption"><h4>Presentasi Hasil</h4><p>Siswa mempresentasikan hasil praktiknya</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="img/galeri/galeri (7).jpg" alt="Dokumentasi 7">
+                <div class="galeri-caption"><h4>Diskusi Kelompok</h4><p>Diskusi kelompok dalam memecahkan masalah pembelajaran</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="450">
+                <img src="img/galeri/galeri (8).png" alt="Dokumentasi 8">
+                <div class="galeri-caption"><h4>Evaluasi Siklus</h4><p>Kegiatan evaluasi bersama guru pamong</p></div>
+            </div>
+            <div class="galeri-item" data-aos="fade-up" data-aos-delay="500">
+                <img src="img/galeri/galeri (9).png" alt="Dokumentasi 9">
+                <div class="galeri-caption"><h4>Penutupan PPL</h4><p>Penutupan kegiatan PPL dan perpisahan</p></div>
             </div>
         </div>
     </section>
