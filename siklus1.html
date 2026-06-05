@@ -184,24 +184,37 @@
             padding: 0;
         }
         
-        .analisis-list {
-            padding-left: 1.5rem;
+        .analisis-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
         
-        .analisis-item {
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
+        .analisis-table tr {
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .analisis-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .analisis-table td {
+            padding: 0.7rem 0.5rem;
+            vertical-align: top;
             line-height: 1.6;
         }
         
-        .analisis-item strong {
+        .analisis-table .analisis-label {
             color: var(--primary);
-            display: inline;
+            font-weight: 600;
+            white-space: nowrap;
+            width: 30%;
+            padding-right: 1rem;
         }
         
-        .analisis-item span {
-            display: inline;
+        .analisis-table .analisis-value {
+            color: var(--text-light);
         }
     </style>
 </head>
@@ -228,12 +241,12 @@
                         </div>
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
-                            <div class="analisis-list">
-                                <div class="analisis-item"><strong>Kendala Penyusunan:</strong> <span>Keterbatasan bahan ajar dan buku referensi baru untuk teknik pengolahan dasar.</span></div>
-                                <div class="analisis-item"><strong>Adopsi Teori dan Pedagogi:</strong> <span>Teori Konstruktivisme dan Kognitivisme Sosial untuk membangun pemahaman melalui pengalaman langsung.</span></div>
-                                <div class="analisis-item"><strong>Faktor Keberhasilan:</strong> <span>Dukungan penuh dari dosen pembimbing dan guru pamong serta antusiasme siswa.</span></div>
-                                <div class="analisis-item"><strong>Adaptasi untuk Situasi Berbeda:</strong> <span>Penyesuaian metode demonstrasi dengan kondisi laboratorium dan tingkat pemahaman awal siswa.</span></div>
-                            </div>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan bahan ajar dan buku referensi baru untuk teknik pengolahan dasar.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Konstruktivisme dan Kognitivisme Sosial untuk membangun pemahaman melalui pengalaman langsung.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Dukungan penuh dari dosen pembimbing dan guru pamong serta antusiasme siswa.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian metode demonstrasi dengan kondisi laboratorium dan tingkat pemahaman awal siswa.</td></tr>
+                            </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
@@ -261,12 +274,12 @@
                         
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
-                            <div class="analisis-list">
-                                <div class="analisis-item"><strong>Kendala Penyusunan:</strong> <span>Keterbatasan referensi teknik pengolahan modern dan bahan praktik.</span></div>
-                                <div class="analisis-item"><strong>Adopsi Teori dan Pedagogi:</strong> <span>Teori Konstruktivisme dengan pendekatan saintifik untuk eksplorasi teknik lanjutan.</span></div>
-                                <div class="analisis-item"><strong>Faktor Keberhasilan:</strong> <span>Kolaborasi aktif antar siswa dalam praktik kelompok.</span></div>
-                                <div class="analisis-item"><strong>Adaptasi untuk Situasi Berbeda:</strong> <span>Penyesuaian resep dan teknik dengan ketersediaan bahan lokal.</span></div>
-                            </div>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan referensi teknik pengolahan modern dan bahan praktik.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Konstruktivisme dengan pendekatan saintifik untuk eksplorasi teknik lanjutan.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Kolaborasi aktif antar siswa dalam praktik kelompok.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian resep dan teknik dengan ketersediaan bahan lokal.</td></tr>
+                            </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
@@ -294,12 +307,12 @@
                         
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
-                            <div class="analisis-list">
-                                <div class="analisis-item"><strong>Kendala Penyusunan:</strong> <span>Kesulitan menyusun instrumen penilaian yang komprehensif untuk keterampilan praktik.</span></div>
-                                <div class="analisis-item"><strong>Adopsi Teori dan Pedagogi:</strong> <span>Teori Kognitivisme Sosial dengan penilaian berbasis rubrik dan umpan balik reflektif.</span></div>
-                                <div class="analisis-item"><strong>Faktor Keberhasilan:</strong> <span>Partisipasi aktif siswa dalam sesi refleksi dan evaluasi diri.</span></div>
-                                <div class="analisis-item"><strong>Adaptasi untuk Situasi Berbeda:</strong> <span>Penyesuaian rubrik penilaian dengan tingkat kemampuan individu siswa.</span></div>
-                            </div>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Kesulitan menyusun instrumen penilaian yang komprehensif untuk keterampilan praktik.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Kognitivisme Sosial dengan penilaian berbasis rubrik dan umpan balik reflektif.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Partisipasi aktif siswa dalam sesi refleksi dan evaluasi diri.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian rubrik penilaian dengan tingkat kemampuan individu siswa.</td></tr>
+                            </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
