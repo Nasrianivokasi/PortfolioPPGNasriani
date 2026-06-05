@@ -583,6 +583,107 @@
             }
         }
         
+        /* Refleksi Section */
+        #refleksi {
+            background: white;
+        }
+        
+        .refleksi-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .refleksi-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .refleksi-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .refleksi-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        
+        .refleksi-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .refleksi-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .feedback-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .feedback-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feedback-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feedback-item li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .feedback-item li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .feedback-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         /* Galeri Section */
         #galeri {
             background: white;
@@ -650,6 +751,7 @@
             <li><a href="#penilaian">Penilaian</a></li>
             <li><a href="#model">Model Guru</a></li>
             <li><a href="#refleksi">Refleksi</a></li>
+            <li><a href="#filosofi">Filosofi</a></li>
             <li><a href="#galeri">Galeri</a></li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -797,7 +899,7 @@
         </div>
     </section>
 
-        <section id="model">
+    <section id="model">
         <h2 class="section-title" data-aos="fade-up">Model Guru yang Dituju</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Misi, Kompetensi dan Karakter Guru Profesional</p>
         
@@ -844,26 +946,53 @@
         <h2 class="section-title" data-aos="fade-up">Refleksi Pembelajaran</h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Analisis dan refleksi selama proses PPL di SMKN 6 Makassar</p>
         
-        <div class="profil-grid">
-            <div class="profil-card biodata" data-aos="fade-up" data-aos-delay="200">
-                <h3>⚠️ Kendala Penyusunan</h3>
-                <p>Keterbatasan bahan ajar dan buku referensi baru menjadi tantangan utama dalam penyusunan perangkat pembelajaran. Untuk mengatasinya, saya memanfaatkan sumber belajar digital dan berkolaborasi dengan guru pamong dalam mengadaptasi materi yang relevan dengan kondisi siswa.</p>
+        <div class="refleksi-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>📚 Yang Telah Dipelajari Selama PPL Terbimbing</h3>
+            <ul class="refleksi-list">
+                <li>Menyusun modul ajar</li>
+                <li>Menyusun Perencanaan Pembelajaran untuk Siswa</li>
+                <li>Memanajemen Siswa di Kelas</li>
+                <li>Ikut Mempersiapkan Murid dalam Melaksanakan Praktik</li>
+            </ul>
+        </div>
+        
+        <div class="refleksi-card" data-aos="fade-up" data-aos-delay="300" style="border-left-color: var(--accent);">
+            <h3>💪 Pengalaman Menantang Selama PPL</h3>
+            <p>Setelah melaksanakan PPL 1, saya memperoleh banyak pengalaman yang berharga sekaligus menantang. Salah satu tantangan yang saya hadapi adalah bagaimana menangani murid yang sulit diatur dan menciptakan suasana kelas yang nyaman agar mereka mau berpartisipasi aktif dalam pembelajaran. Selain itu, guru pamong juga mengajarkan cara mengelola alat dan bahan praktik dengan baik agar kegiatan pembelajaran praktik dapat berjalan lancar. Dari berbagai pengalaman tersebut, tantangan yang paling besar bagi saya adalah mengelola kelas yang terdiri dari murid dengan karakter yang beragam, sehingga semua murid dapat belajar dengan tenang, fokus, dan mengikuti pembelajaran dengan baik.</p>
+        </div>
+        
+        <div class="refleksi-card" data-aos="fade-up" data-aos-delay="400" style="border-left-color: var(--secondary);">
+            <h3>📝 Umpan Balik dari Guru Pamong dan DPL</h3>
+            <div class="feedback-grid">
+                <div class="feedback-item">
+                    <h4>👩‍🏫 Guru Pamong</h4>
+                    <ul>
+                        <li>Modul ajar yang disusun sudah baik, perlu ditambahkan materi dan model pembelajaran berdiferensiasi</li>
+                        <li>Perlu diterapkan pemberian ice breaking di dalam kelas agar murid tidak bosan</li>
+                        <li>Pada pembelajaran teori dengan durasi panjang, guru harus kreatif dan membawa murid mengobservasi dapur</li>
+                    </ul>
+                </div>
+                <div class="feedback-item">
+                    <h4>🎓 DPL</h4>
+                    <ul>
+                        <li>Memperbaiki susunan modul ajar agar lebih menarik</li>
+                        <li>Lebih banyak memperkenalkan murid dengan dunia industri</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="filosofi" style="background: linear-gradient(135deg, #1e3a5f 0%, #3d7ea6 100%); color: white;">
+        <h2 class="section-title" data-aos="fade-up" style="color: white;">Filosofi Mengajar</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" style="color: rgba(255,255,255,0.8);">Nilai dan keyakinan sebagai calon guru profesional</p>
+        
+        <div class="refleksi-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-left-color: var(--accent);">
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem;">Sebagai calon guru profesional, saya meyakini bahwa setiap murid memiliki potensi yang dapat berkembang apabila mendapatkan kesempatan belajar yang sesuai dengan kebutuhan dan kemampuannya. Oleh karena itu, saya berkomitmen untuk menghargai keberagaman karakter, latar belakang, serta gaya belajar murid. Prinsip ini menjadi dasar dalam merancang dan melaksanakan pembelajaran yang berpihak pada murid sehingga setiap peserta didik merasa dihargai dan memiliki kesempatan yang sama untuk berhasil.</p>
             
-            <div class="profil-card daerah" data-aos="fade-up" data-aos-delay="300">
-                <h3>📖 Teori Pedagogi</h3>
-                <p>Mengadopsi <strong>Teori Konstruktivisme</strong> dan <strong>Kognitivisme Sosial</strong> yang menekankan pembelajaran berbasis pengalaman langsung dan interaksi sosial. Siswa dibangun pemahamannya melalui praktik nyata dan kolaborasi kelompok, sehingga pembelajaran menjadi lebih bermakna.</p>
-            </div>
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.8; text-align: justify; margin-bottom: 1.5rem;">Nilai lain yang saya pegang adalah tanggung jawab, integritas, dan semangat belajar sepanjang hayat. Seorang guru tidak hanya bertugas menyampaikan materi, tetapi juga menjadi teladan dalam sikap, perilaku, dan etika. Saya percaya bahwa guru profesional harus terus mengembangkan kompetensinya melalui refleksi, pelatihan, kolaborasi dengan rekan sejawat, serta mengikuti perkembangan ilmu pengetahuan dan teknologi agar dapat memberikan layanan pendidikan yang terbaik bagi murid.</p>
             
-            <div class="profil-card inspirasi" data-aos="fade-up" data-aos-delay="400">
-                <h3>✅ Faktor Keberhasilan</h3>
-                <p>Dukungan penuh dari dosen pembimbing dan guru pamong menjadi faktor utama keberhasilan. Antusiasme dan partisipasi aktif siswa dalam setiap sesi pembelajaran juga berkontribusi besar terhadap tercapainya tujuan pembelajaran yang telah ditetapkan.</p>
-            </div>
-            
-            <div class="profil-card" data-aos="fade-up" data-aos-delay="500" style="background:#fff3e0;">
-                <h3>🔄 Adaptasi Kelas Lain</h3>
-                <p>Perangkat pembelajaran dirancang fleksibel sehingga dapat diadaptasi untuk situasi kelas yang berbeda. Penyesuaian dilakukan pada metode penyampaian, tingkat kesulitan tugas, dan instrumen penilaian sesuai dengan karakteristik dan kebutuhan masing-masing kelas.</p>
-            </div>
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.8; text-align: justify;">Selain itu, saya meyakini bahwa proses pendidikan yang efektif dibangun melalui hubungan yang positif antara guru dan murid. Oleh karena itu, saya berusaha menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan sehingga murid merasa termotivasi untuk belajar dan berpartisipasi aktif. Pengalaman selama PPL semakin menguatkan keyakinan saya bahwa kesabaran, empati, dan kemampuan berkomunikasi merupakan nilai penting yang harus dimiliki seorang guru profesional dalam mendampingi murid mencapai potensi terbaiknya.</p>
         </div>
     </section>
 
@@ -873,44 +1002,43 @@
         
         <div class="galeri-grid">
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="100">
-                <img src="img/galeri/galeri (1).jpeg" alt="Dokumentasi 1">
-                <div class="galeri-caption"><h4>Pembukaan PPL</h4><p>Penerimaan mahasiswa  PPL di SMKN 6 Makassar</p></div>
+                <img src="img/galeri/galeri (1).jpg" alt="Dokumentasi 1">
+                <div class="galeri-caption"><h4>Pembukaan PPL</h4><p>Upacara pembukaan kegiatan PPL di SMKN 6 Makassar</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="150">
                 <img src="img/galeri/galeri (2).jpg" alt="Dokumentasi 2">
-                <div class="galeri-caption"><h4>Kunjungan DPL dan Dosen Filosofi</h4><p>proses observasi DPL dan penerapam kode etik guru</p></div>
+                <div class="galeri-caption"><h4>Persiapan Mengajar</h4><p>Menyusun perangkat pembelajaran bersama guru pamong</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="200">
                 <img src="img/galeri/galeri (3).jpg" alt="Dokumentasi 3">
-                <div class="galeri-caption"><h4>Kegiatan Monitoring</h4><p>Proses pendampingan asistensi mengajar</p></div>
+                <div class="galeri-caption"><h4>Kegiatan Belajar</h4><p>Proses pembelajaran teori di dalam kelas</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="250">
                 <img src="img/galeri/galeri (4).JPG" alt="Dokumentasi 4">
-                <div class="galeri-caption"><h4>Arahan Guru Pamong</h4><p>Diskusi persiapan mengajar dan Praktek</p></div>
+                <div class="galeri-caption"><h4>Praktik Kuliner</h4><p>Siswa melakukan praktik pengolahan makanan</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="300">
                 <img src="img/galeri/galeri (5).jpg" alt="Dokumentasi 5">
-                <div class="galeri-caption"><h4>Proses penjemputan dan 3S</h4><p>Sesi penjemputan murid dan kegiatan salam, senyum sapa</p></div>
+                <div class="galeri-caption"><h4>Bimbingan Dosen</h4><p>Sesi bimbingan dengan dosen pembimbing lapangan</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="350">
                 <img src="img/galeri/galeri (6).jpg" alt="Dokumentasi 6">
-                <div class="galeri-caption"><h4>Diskusi dengan guru Pamong</h4><p>Penyusunan Modul ajar dan perbaikan RPM</p></div>
+                <div class="galeri-caption"><h4>Presentasi Hasil</h4><p>Siswa mempresentasikan hasil praktiknya</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="400">
                 <img src="img/galeri/galeri (7).jpg" alt="Dokumentasi 7">
-                <div class="galeri-caption"><h4>Diskusi Kelompok</h4><p>Diskusi kelompok dalam memecahkan masalah pembelajaran dan membahas program kerja sekolah</p></div>
+                <div class="galeri-caption"><h4>Diskusi Kelompok</h4><p>Diskusi kelompok dalam memecahkan masalah pembelajaran</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="450">
                 <img src="img/galeri/galeri (8).png" alt="Dokumentasi 8">
-                <div class="galeri-caption"><h4>Upacara Bendera</h4><p>Kegiatan upacara setiap hari senin</p></div>
+                <div class="galeri-caption"><h4>Evaluasi Siklus</h4><p>Kegiatan evaluasi bersama guru pamong</p></div>
             </div>
             <div class="galeri-item" data-aos="fade-up" data-aos-delay="500">
                 <img src="img/galeri/galeri (9).png" alt="Dokumentasi 9">
-                <div class="galeri-caption"><h4> FOTO BERSAMA </h4><p>Kegiatan Penjemputan dan foto bersama seluruh mahasiswa PKL</p></div>
+                <div class="galeri-caption"><h4>Penutupan PPL</h4><p>Penutupan kegiatan PPL dan perpisahan</p></div>
             </div>
         </div>
     </section>
-
 
     <footer>
         <p>E-Portofolio | Nasriani, S.Pd. | PPG Calon Guru 2026</p>
