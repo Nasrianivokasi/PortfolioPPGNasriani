@@ -110,7 +110,7 @@
         }
         
         .pertemuan.active .pertemuan-content {
-            max-height: 2000px;
+            max-height: 3000px;
         }
         
         .pertemuan-inner {
@@ -183,6 +183,39 @@
             color: var(--text-light);
             padding: 0;
         }
+        
+        .analisis-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .analisis-table tr {
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .analisis-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .analisis-table td {
+            padding: 0.7rem 0.5rem;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        
+        .analisis-table .analisis-label {
+            color: var(--primary);
+            font-weight: 600;
+            white-space: nowrap;
+            width: 30%;
+            padding-right: 1rem;
+        }
+        
+        .analisis-table .analisis-value {
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
@@ -201,23 +234,28 @@
                 <span class="pertemuan-toggle">▼</span>
             </div>
             <div class="pertemuan-content">
-                <div class="pertemuan-inner">
-                    <div class="konten-item">
-                        <h4>📚 Modul Ajar</h4>
-                        <p>Modul Ajar Siklus 2 Pertemuan 1 - Pembelajaran Tingkat lanjut........... <a href="#" class="download-btn">👁 Lihat</a> <a href="#" class="download-btn">⬇ Download</a></p>
-                    </div>
-                    <div class="konten-item">
-                        <h4>📷 Dokumentasi</h4>
-                        <div class="doc-grid">
-                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                    <div class="pertemuan-inner">
+                        <div class="konten-item">
+                            <h4>📚 Modul Ajar</h4>
+                            <p>Modul Ajar Siklus 2 Pertemuan 1 - Pie <a href="https://docs.google.com/document/d/1czP14CDEQatWxU9GwrhmvFteC6NgsAyZ" class="download-btn" target="_blank">👁 Lihat</a></p>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📊 Analisis</h4>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan bahan ajar digital dan modul interaktif untuk praktik lanjutan.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Konstruktivisme dengan model Project Based Learning untuk meningkatkan kreativitas.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Motivasi tinggi siswa dan dukungan fasilitas laboratorium yang memadai.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian tingkat kesulitan proyek sesuai kapasitas masing-masing kelompok.</td></tr>
+                            </table>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📷 Dokumentasi</h4>
+                            <div class="doc-grid">
+                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="konten-item">
-                        <h4>📊 Analisis</h4>
-                        <p>Analisis pembelajaran siklus 2 pertemuan 1 dengan fokus peningkatan keterampilan siswa.</p>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -227,24 +265,29 @@
                 <span class="pertemuan-toggle">▼</span>
             </div>
             <div class="pertemuan-content">
-                <div class="pertemuan-inner">
-                    <div class="konten-item">
-                        <h4>📚 Modul Ajar</h4>
-                        <p>Modul Ajar Siklus 2 Pertemuan 2 - Praktek Mengolah........... <a href="#" class="download-btn">👁 Lihat</a> <a href="#" class="download-btn">⬇ Download</a></p>
-                    </div>
-                    <div class="konten-item">
-                        <h4>📷 Dokumentasi</h4>
-                        <div class="doc-grid">
-                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
-                            <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                    <div class="pertemuan-inner">
+                        <div class="konten-item">
+                            <h4>📚 Modul Ajar</h4>
+                            <p>Modul Ajar Siklus 2 Pertemuan 2 - Chouxe Pastry <a href="https://docs.google.com/document/d/1R6cXC89BfcnIyuD3GLWkvci1AT2yaNJV" class="download-btn" target="_blank">👁 Lihat</a></p>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📊 Analisis</h4>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan waktu praktik dan pengelolaan bahan baku yang efisien.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Pembelajaran Berbasis Pengalaman (Experiential Learning) untuk praktik langsung.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Bimbingan intensif dari guru pamong selama sesi praktik.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penggunaan bahan alternatif yang mudah ditemukan di lingkungan sekitar.</td></tr>
+                            </table>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📷 Dokumentasi</h4>
+                            <div class="doc-grid">
+                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                                <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="konten-item">
-                        <h4>📊 Analisis</h4>
-                        <p>Analisis menunjukkan siswa telah menguasai teknik pengolahan tingkat lanjut.</p>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -254,23 +297,28 @@
                 <span class="pertemuan-toggle">▼</span>
             </div>
             <div class="pertemuan-content">
-                <div class="pertemuan-inner">
-                    <div class="konten-item">
-                        <h4>📚 Modul Ajar</h4>
-                        <p>Modul Ajar Siklus 2 Pertemuan 3 - Evaluasi Akhir........... <a href="#" class="download-btn">👁 Lihat</a> <a href="#" class="download-btn">⬇ Download</a></p>
-                    </div>
-                    <div class="konten-item">
-                        <h4>📷 Dokumentasi</h4>
-                        <div class="doc-grid">
-                            <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                            <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                    <div class="pertemuan-inner">
+                        <div class="konten-item">
+                            <h4>📚 Modul Ajar</h4>
+                            <p>Modul Ajar Siklus 2 Pertemuan 3 - Cookies (Kue kering) <a href="https://docs.google.com/document/d/18XbEoz62gDL9Lp4V-QZB3yQJ71XfIb1o" class="download-btn" target="_blank">👁 Lihat</a></p>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📊 Analisis</h4>
+                            <table class="analisis-table">
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Kesulitan merancang soal evaluasi yang mengukur aspek kognitif dan psikomotorik secara seimbang.</td></tr>
+                                <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Penilaian Autentik dengan rubrik penilaian berbasis kriteria yang jelas.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Hasil evaluasi menunjukkan 85% siswa mencapai KKM dengan kategori baik.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian bobot penilaian sesuai dengan karakteristik dan kebutuhan kelas.</td></tr>
+                            </table>
+                        </div>
+                        <div class="konten-item">
+                            <h4>📷 Dokumentasi</h4>
+                            <div class="doc-grid">
+                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
+                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="konten-item">
-                        <h4>📊 Analisis</h4>
-                        <p>Evaluasi akhir siklus 2 menunjukkan hasil yang memuaskan dengan tingkat keberhasilan 85%.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
