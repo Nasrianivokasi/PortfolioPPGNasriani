@@ -160,28 +160,48 @@
         
         .doc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 1rem;
             padding-left: 1.5rem;
         }
         
-        .doc-item {
-            background: var(--light);
-            padding: 1rem;
+        .doc-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
             border-radius: 8px;
-            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        .doc-item span {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 0.5rem;
+        .doc-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
         
-        .doc-item p {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            padding: 0;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            cursor: default;
         }
         
         .analisis-table {
@@ -251,9 +271,9 @@
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
                             <div class="doc-grid">
-                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                                <img src="img/siklus3/coklat (1).png" alt="Coklat Praline 1" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus3/coklat (2).png" alt="Coklat Praline 2" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus3/coklat (3).png" alt="Coklat Praline 3" class="doc-img" onclick="openModal(this.src)">
                             </div>
                         </div>
                     </div>
@@ -274,7 +294,7 @@
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
                             <table class="analisis-table">
-                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan waktu untuk presentasi hasil karya dan sesi refleksi menyeluruh.</td></tr>
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Kepercayaan diri dari murid pada saat presentasi hasil masih kurang.</td></tr>
                                 <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Kognitivisme Sosial dengan presentasi dan peer assessment untuk memperkuat pemahaman.</td></tr>
                                 <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Tingkat keberhasilan 92% siswa mencapai kompetensi yang diharapkan dengan kategori sangat baik.</td></tr>
                                 <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Fleksibilitas bentuk presentasi (lisan, demonstrasi, atau video) sesuai kenyamanan siswa.</td></tr>
@@ -283,8 +303,9 @@
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
                             <div class="doc-grid">
-                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                                <img src="img/siklus3/tepung (1).jpg" alt="Tepung Hunkue 1" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus3/tepung (2).jpg" alt="Tepung Hunkue 2" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus3/tepung (3).png" alt="Tepung Hunkue 3" class="doc-img" onclick="openModal(this.src)">
                             </div>
                         </div>
                     </div>
@@ -299,6 +320,30 @@
         function togglePertemuan(el) {
             el.parentElement.classList.toggle('active');
         }
+        
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const img = document.getElementById('modal-img');
+            img.src = src;
+            modal.classList.add('active');
+        }
+        
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('modal');
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('modal').classList.remove('active');
+            }
+        });
     </script>
+    
+    <div id="modal" class="modal">
+        <img id="modal-img" src="" alt="Dokumentasi">
+    </div>
 </body>
 </html>
