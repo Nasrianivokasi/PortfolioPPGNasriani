@@ -158,32 +158,6 @@
             background: var(--accent);
         }
         
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            padding-left: 1.5rem;
-        }
-        
-        .doc-item {
-            background: var(--light);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .doc-item span {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .doc-item p {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            padding: 0;
-        }
-        
         .analisis-table {
             width: 100%;
             border-collapse: collapse;
@@ -216,6 +190,52 @@
         .analisis-table .analisis-value {
             color: var(--text-light);
         }
+        
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .doc-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .doc-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            cursor: default;
+        }
     </style>
 </head>
 <body>
@@ -242,17 +262,18 @@
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
                             <table class="analisis-table">
-                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan bahan ajar digital dan modul interaktif untuk praktik lanjutan.</td></tr>
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan bahan ajar  dan modul interaktif untuk praktik lanjutan, paraktik ini membutuhkan ketelitian tinggi sehingga murid lebih mudah melakukan kesalahan.</td></tr>
                                 <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Konstruktivisme dengan model Project Based Learning untuk meningkatkan kreativitas.</td></tr>
-                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Motivasi tinggi siswa dan dukungan fasilitas laboratorium yang memadai.</td></tr>
-                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian tingkat kesulitan proyek sesuai kapasitas masing-masing kelompok.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Motivasi tinggi murid dan dukungan fasilitas laboratorium yang memadai.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Jika ada murid yang melakukan kesalahan dan gagal dalam prakrik maka guru mengarahkan murid untuk terus mencoba, melihat video,dan mencari titik kesalahannya..</td></tr>
                             </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
                             <div class="doc-grid">
-                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                                <img src="img/siklus2/pie (1).jpg" alt="Pie 1" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/pie (2).jpg" alt="Pie 2" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/pie (3).png" alt="Pie 3" class="doc-img" onclick="openModal(this.src)">
                             </div>
                         </div>
                     </div>
@@ -273,18 +294,18 @@
                         <div class="konten-item">
                             <h4>📊 Analisis</h4>
                             <table class="analisis-table">
-                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Keterbatasan waktu praktik dan pengelolaan bahan baku yang efisien.</td></tr>
+                                <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Perbedaan Kemampuan peserta didik dan penyusunan asesmen keterampilan.</td></tr>
                                 <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Pembelajaran Berbasis Pengalaman (Experiential Learning) untuk praktik langsung.</td></tr>
                                 <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Bimbingan intensif dari guru pamong selama sesi praktik.</td></tr>
-                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penggunaan bahan alternatif yang mudah ditemukan di lingkungan sekitar.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penggunaan bahan alternatif yang mudah ditemukan di lingkungan sekitar jika ada murid yang gagal dalam praktik.</td></tr>
                             </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
                             <div class="doc-grid">
-                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 3</p></div>
+                                <img src="img/siklus2/sus (1).jpg" alt="Chouxe Pastry 1" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/sus (2).jpg" alt="Chouxe Pastry 2" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/sus (3).jpg" alt="Chouxe Pastry 3" class="doc-img" onclick="openModal(this.src)">
                             </div>
                         </div>
                     </div>
@@ -307,15 +328,16 @@
                             <table class="analisis-table">
                                 <tr><td class="analisis-label">Kendala Penyusunan</td><td class="analisis-value">Kesulitan merancang soal evaluasi yang mengukur aspek kognitif dan psikomotorik secara seimbang.</td></tr>
                                 <tr><td class="analisis-label">Adopsi Teori dan Pedagogi</td><td class="analisis-value">Teori Penilaian Autentik dengan rubrik penilaian berbasis kriteria yang jelas.</td></tr>
-                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Hasil evaluasi menunjukkan 85% siswa mencapai KKM dengan kategori baik.</td></tr>
-                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian bobot penilaian sesuai dengan karakteristik dan kebutuhan kelas.</td></tr>
+                                <tr><td class="analisis-label">Faktor Keberhasilan</td><td class="analisis-value">Perencanaan pembelajaran yang baik, penagarahan yang baik oleh guru dan pemilihan model pembelajaran yang tepat.</td></tr>
+                                <tr><td class="analisis-label">Adaptasi untuk Situasi Berbeda</td><td class="analisis-value">Penyesuaian bobot penilaian sesuai dengan karakteristik dan kebutuhan kelas, mengubah pembelajaran menjadi analisis kasus.</td></tr>
                             </table>
                         </div>
                         <div class="konten-item">
                             <h4>📷 Dokumentasi</h4>
                             <div class="doc-grid">
-                                <div class="doc-item"><span>📷</span><p>Foto 1</p></div>
-                                <div class="doc-item"><span>📷</span><p>Foto 2</p></div>
+                                <img src="img/siklus2/cookies (1).png" alt="Cookies 1" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/cookies (2).jpg" alt="Cookies 2" class="doc-img" onclick="openModal(this.src)">
+                                <img src="img/siklus2/cookies (3).png" alt="Cookies 3" class="doc-img" onclick="openModal(this.src)">
                             </div>
                         </div>
                     </div>
@@ -330,6 +352,29 @@
         function togglePertemuan(el) {
             el.parentElement.classList.toggle('active');
         }
+        
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const img = document.getElementById('modal-img');
+            img.src = src;
+            modal.classList.add('active');
+        }
+        
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('modal');
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('modal').classList.remove('active');
+            }
+        });
     </script>
+    <div id="modal" class="modal">
+        <img id="modal-img" src="" alt="Dokumentasi">
+    </div>
 </body>
 </html>
